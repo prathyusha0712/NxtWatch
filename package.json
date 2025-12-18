@@ -25,7 +25,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d build --repo https://github.com/prathyusha0712/NxtWatch.git",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
