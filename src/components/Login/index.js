@@ -17,12 +17,21 @@ import {
 
 class Login extends Component {
   state = {
-    usernameInput: '',
-    passwordInput: '',
+    usernameInput: localStorage.getItem('usernameInput') || '',
+    passwordInput: localStorage.getItem('passwordInput') || '',
     errorMsg: '',
     showErrorMsg: false,
     showPassword: false,
     redirectToHome: false,
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.usernameInput !== this.state.usernameInput) {
+      localStorage.setItem('usernameInput', this.state.usernameInput)
+    }
+    if (prevState.passwordInput !== this.state.passwordInput) {
+      localStorage.setItem('passwordInput', this.state.passwordInput)
+    }
   }
 
   onSuccessLogin = jwtToken => {
